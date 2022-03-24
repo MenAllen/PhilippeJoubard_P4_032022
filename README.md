@@ -9,6 +9,8 @@
 6. Correction erreur dû au fichier lié au background-image inexistant & désactivation du menu Accueil (class active)
 7. Ajout de la fonction de fermeture de la modal
 
+8. Ajout des fonctions javascript de validation de formulaire
+
 
 
 

@@ -1,3 +1,4 @@
+// Manipulation du menu nav pour s'adapter à la taille d'écran -> responsive
 function editNav() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
@@ -7,27 +8,25 @@ function editNav() {
   }
 }
 
-// DOM Elements
-const modalbg = document.querySelector(".bground");
+// DOM Elements utilisés pour les fonctions Javascript
+const modalBg = document.querySelector(".bground");
 const modalClose = document.querySelector(".close");
 const modalBtn = document.querySelectorAll(".modal-btn");
-const formData = document.querySelectorAll(".formData");
+// const formData = document.querySelectorAll(".formData");
 
 // Manage modal events: launch & close
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 modalClose.addEventListener("click", closeModal);
 
 
-// launch modal form
+// Affiche le formulaire modal
 function launchModal() {
-  modalbg.style.display = "block";
+  modalBg.style.display = "block";
 }
 
-// close modal form et réinitialise le formulaire
+// Ferme le formulaire modal en réinitialisant les champs éventuels
 function closeModal() {
-  modalbg.style.display = "none";
+  modalBg.style.display = "none";
   document.querySelector("form").reset();
 }
-
-
 
