@@ -1,4 +1,5 @@
 // Constantes de travail
+const formulaire = document.forms[0];
 const firstname = document.getElementById("first");
 const lastname = document.getElementById("last");                  
 const nameValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/;
@@ -16,14 +17,17 @@ const checkbox1 = document.getElementById("checkbox1");
 // variable de travail
 let formValid = document.getElementById("btn-submit");
 
-// Validation du formulaire
+// Fonction de validation du formulaire (appelée sur détection du submit)
 function validateForm(event) {
+
+  let result = true;
 
   //Prénom: test si non vide, longueur > 2 et caractères acceptés
   if ((firstname.validity.valueMissing) || (nameValid.test(firstname.value) == false)) {
     event.preventDefault();
     firstname.parentElement.setAttribute("data-error", "Prénom manquant ou format incorrect");
     firstname.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     firstname.parentElement.setAttribute("data-error-visible", "false");
   }
@@ -33,6 +37,7 @@ function validateForm(event) {
     event.preventDefault();
     lastname.parentElement.setAttribute("data-error", "Nom manquant ou format incorrect");
     lastname.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     lastname.parentElement.setAttribute("data-error-visible", "false");
   }
@@ -42,6 +47,7 @@ function validateForm(event) {
     event.preventDefault();
     email.parentElement.setAttribute("data-error", "Mail manquant ou format mail incorrect");
     email.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     email.parentElement.setAttribute("data-error-visible", "false");
   }
@@ -51,6 +57,7 @@ function validateForm(event) {
     event.preventDefault();
     birthdate.parentElement.setAttribute("data-error", "Date manquante ou format date incorrect");
     birthdate.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     birthdate.parentElement.setAttribute("data-error-visible", "false");
   }
@@ -58,8 +65,9 @@ function validateForm(event) {
   //quantity: test si non vide, et valeur entre 0 & 99
   if ((quantity.validity.valueMissing) || (quantityValid.test(quantity.value) == false)) {
     event.preventDefault();
-    quantity.parentElement.setAttribute("data-error", "Veuillez rentrer une quantité entre 0 et 99");
+    quantity.parentElement.setAttribute("data-error", "Veuillez entrer un nombre entre 0 et 99");
     quantity.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     quantity.parentElement.setAttribute("data-error-visible", "false");
   }
@@ -79,22 +87,26 @@ function validateForm(event) {
     event.preventDefault();
     checkbox1.parentElement.setAttribute("data-error", "Veuillez accepter les conditions generales");
     checkbox1.parentElement.setAttribute("data-error-visible", "true");
+    result = false;
   } else {
     checkbox1.parentElement.setAttribute("data-error-visible", "false");
   }
 
+  return result;
+
 }
 
-function submitForm(event) {
+// sur détection du submit, on lance la validation du formulaire
+// si validation OK on affiche le message de confirmation et on resette le formulaire
+// sinon, on attend la correction
+formulaire.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-  if (validateForm(event)) {
-
-  } else {
-
+  if (validateForm(e)) {
+    submitModalConfirmation();
+    formulaire.reset();
   }
 
-}
+});
 
-// sur détecttion du click sur le bouton submit, lance la validation du formulaire
-formValid.addEventListener('click', submitForm);
-
+//formValid.addEventListener('click', submitForm);

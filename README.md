@@ -11,6 +11,8 @@
 
 8. Ajout des fonctions javascript de validation de formulaire
 
+9. Ajout du panneu de confirmation d'inscription
+
 
 
 
