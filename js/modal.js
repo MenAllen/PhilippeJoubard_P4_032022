@@ -18,8 +18,9 @@ const modalConfirmClose = document.querySelector(".bground-confirm .btn-submit")
 
 
 
-// Affiche le formulaire modal
+// Affiche le formulaire modal après avoir effacé les éventuels messages d'erreurs du formulaire
 function launchModal() {
+  clearErrors();
   modalBg.style.display = "block";
 }
 
@@ -33,7 +34,6 @@ function closeModal() {
 function submitModalConfirmation() {
   modalBg.style.display = "none";
   modalConfirm.style.display = "block";
-  console.log("submitModalConfirmation");
 }
 
 // Ferme le panneau de confirmation
