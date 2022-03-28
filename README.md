@@ -36,7 +36,8 @@
 
 	9. Ajout du panneau de confirmation d'inscription
 
-	10. Modification des fonctions javascript de formulaire pour réagir sur modification de champ (input) 
+	10. Modification des fonctions javascript de formulaire pour réagir sur modification de champ (input)
+	11. Corrections messages d'erreur, placeholder mail, regex first & last, caractère apostrophe
 
 
 
