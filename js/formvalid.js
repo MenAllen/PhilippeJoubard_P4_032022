@@ -9,7 +9,7 @@ const inputsFormulaire = document.querySelectorAll("input");
 // Constantes pour test des inputs
 const firstname = document.getElementById("first");
 const lastname = document.getElementById("last");                  
-const nameValid = /^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$/; // au moins 2 caractères alphabétiques, un seul '-'
+const nameValid = /^[a-zA-ZéèîïÉÈÎÏ'][a-zéèêàçîï']+([-\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï']+)?$/; // au moins 2 caractères alphabétiques, un seul '-' ou espace
 const email = document.getElementById("email");
 const emailValid = /^[a-zA-Z0-9\-_]+[a-zA-Z0-9\.\-_]*@[a-zA-Z0-9\-_]{2,}\.[a-zA-Z\.\-_]+[a-zA-Zs\-_]$/; // format minimum xx@yy.zz 
 const birthdate = document.getElementById("birthdate");
@@ -34,7 +34,6 @@ function checkFirstname(event) {
 
   if ((firstname.validity.valueMissing) || (nameValid.test(firstname.value) == false)) {
     event.preventDefault();
-    firstname.parentElement.setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le prénom");
     firstname.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
@@ -47,7 +46,6 @@ function checkLastname(event) {
 
   if ((lastname.validity.valueMissing) || (nameValid.test(lastname.value) == false)) {
     event.preventDefault();
-    lastname.parentElement.setAttribute("data-error", "Veuillez entrer 2 caractères ou plus pour le nom");
     lastname.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
@@ -60,7 +58,6 @@ function checkEmail(event) {
 
   if ((email.validity.valueMissing) || (emailValid.test(email.value) == false)) {
     event.preventDefault();
-    email.parentElement.setAttribute("data-error", "Veuillez respecter le format du mail (exemple@domaine.fr)");
     email.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
@@ -73,7 +70,6 @@ function checkBirthdate(event) {
 
   if ((birthdateValid.test(birthdate.value) == false)) {
     event.preventDefault();
-    birthdate.parentElement.setAttribute("data-error", "Veuillez sélectionner une date au format indiqué");
     birthdate.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
@@ -86,7 +82,6 @@ function checkQuantity(event) {
 
   if ((quantity.validity.valueMissing) || (quantityValid.test(quantity.value) == false)) {
     event.preventDefault();
-    quantity.parentElement.setAttribute("data-error", "Veuillez entrer un nombre entre 0 et 99");
     quantity.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
@@ -103,7 +98,6 @@ function checkTournaments(event) {
       return true;
     } 
   }
-  tournaments.setAttribute("data-error", "Veuillez sélectionner une ville");
   tournaments.setAttribute("data-error-visible", "true");
   return false;
 }
@@ -113,14 +107,12 @@ function checkCheckbox1(event) {
 
   if (!(checkbox1.checked)) {
     event.preventDefault();
-    checkbox1.parentElement.setAttribute("data-error", "Veuillez accepter les conditions d'utilisation");
     checkbox1.parentElement.setAttribute("data-error-visible", "true");
     return false;
   }
   checkbox1.parentElement.setAttribute("data-error-visible", "false");
   return true;
 }
-
 
 // Fonction de validation du formulaire (appelée sur détection du submit)
 // On doit tester tous les champs
@@ -171,7 +163,7 @@ firstname.addEventListener("keyup", checkFirstname);
 lastname.addEventListener("keyup", checkLastname);
 email.addEventListener("keyup", checkEmail);
 birthdate.addEventListener("input", checkBirthdate);
-quantity.addEventListener("keyup", checkQuantity);
+quantity.addEventListener("input", checkQuantity);
 tournaments.addEventListener("input", checkTournaments);
 checkbox1.addEventListener("input", checkCheckbox1);
 

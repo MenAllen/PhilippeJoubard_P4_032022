@@ -19,7 +19,7 @@
 					<img alt="logo" src="./img/Logo.png" />
 				</div>      
         <div class="main-navbar">
-          <a href="index.html"><span>Accueil</span></a>
+          <a href="#"  class="active" ><span>Accueil</span></a>
           <a href="#"><span>Détails de l'évènement</span></a>
           <a href="#"><span>À propos</span></a>
           <a href="#"><span>Évènements passés</span></a>
@@ -43,12 +43,12 @@
 					<p class="hero-text">
 						Vous aimez jouer ? Notre prochain évènement gaming est ouvert aux réservations... Places limitées !
 					</p>
-					<button class="btn-signup modal-btn">je m'inscris</button>
+					<button class="btn-signup modal-btn">Je m'inscris</button>
 				</div>
 				<div class="hero-img">
 					<img src="./img/bg_img.jpg" alt="img" />
 				</div>
-				<button class="btn-signup modal-btn">je m'inscris</button>
+				<button class="btn-signup modal-btn">Je m'inscris</button>
 			</div>
 
       <!-- Element modal s'affiche si inscription demandée -->
@@ -61,28 +61,28 @@
           <!-- Formulaires permettant l'acquisition des variables -->
 					<div class="modal-body">
 						<form name="reserve" action="index.html" method="GET" novalidate >
-							<div class="formData">
-								<label for="first">Prénom</label><br />
-								<input class="text-control" type="text" id="first" name="first" required/><br />
+							<div class="formData" data-error="Veuillez entrer au moins 2 caractères" data-error-visible="false">
+								<label for="first">Prénom</label>
+								<input class="text-control" type="text" id="first" name="first" required/>
 							</div>
-							<div class="formData">
-								<label for="last">Nom</label><br />
-								<input class="text-control" type="text" id="last" name="last" required/><br />
+							<div class="formData" data-error="Veuillez entrer au moins 2 caractères" data-error-visible="false">
+								<label for="last">Nom</label>
+								<input class="text-control" type="text" id="last" name="last" required/>
 							</div>
-							<div class="formData">
-								<label for="email">E-mail</label><br />
-								<input class="text-control" type="email" id="email" name="email" required /><br />
+							<div class="formData" data-error="Veuillez respecter le format mail" data-error-visible="false">
+								<label for="email">E-mail</label>
+								<input class="text-control" type="email" id="email" name="email" placeholder="example@domaine.fr" required />
 							</div>
-							<div class="formData">
-								<label for="birthdate">Date de naissance</label><br />
-								<input class="text-control" type="date" id="birthdate" name="birthdate" /><br />
+							<div class="formData" data-error="Veuillez utiliser le format indiqué" data-error-visible="false">
+								<label for="birthdate">Date de naissance</label>
+								<input class="text-control" type="date" id="birthdate" name="birthdate" />
 							</div>
-							<div class="formData">
-								<label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label><br />
+							<div class="formData" data-error="Veuillez entrer un nombre entre 0 et 99" data-error-visible="false">
+								<label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
 								<input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required />
 							</div>
 							<p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
-							<div class="formData" id ="tournaments">
+							<div class="formData" id ="tournaments" data-error="Veuillez sélectionner une ville" data-error-visible="false">
 								<input class="checkbox-input" type="radio" id="location1" name="location" value="New York" />
 								<label class="checkbox-label" for="location1">
 									<span class="checkbox-icon"></span>
@@ -115,7 +115,7 @@
 								>
 							</div>
 
-							<div class="formData">
+							<div class="formData" data-error="Veuillez accepter les conditions d'utilisation" data-error-visible="false">
 								<input class="checkbox-input" type="checkbox" id="checkbox1"  />
 								<label class="checkbox2-label" for="checkbox1">
 									<span class="checkbox-icon"></span>
