@@ -157,7 +157,6 @@ formulaire.addEventListener('submit', function (e) {
 
 });
 
-
 // Sur détection de changement d'input, on valide le champ
 firstname.addEventListener("keyup", checkFirstname);
 lastname.addEventListener("keyup", checkLastname);

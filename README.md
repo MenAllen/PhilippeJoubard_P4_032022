@@ -23,21 +23,17 @@
 	
 # Historique des livraisons
 	1. Récupération du projet
-
 	2. Ré-organisation du répertoire projet: création des répertoires css, img et js
 	3. Rajout de controles sur input modal: prénom, nom, email, date de naissance, boutons radio et bouton CGU
 	4. Corrections sur Validations W3C HTML & CSS
-
 	5. Prise en compte des contraintes du responsive (menu nav principalement)
 	6. Correction erreur dû au fichier lié au background-image inexistant & désactivation du menu Accueil (class active)
 	7. Ajout de la fonction de fermeture de la modal
-
 	8. Ajout des fonctions javascript de validation de formulaire
-
 	9. Ajout du panneau de confirmation d'inscription
-
 	10. Modification des fonctions javascript de formulaire pour réagir sur modification de champ (input)
 	11. Corrections messages d'erreur, placeholder mail, regex first & last, caractère apostrophe
+	12. remonté message d'alarme sur CGU sous le bouton correspondant
 
 
 
