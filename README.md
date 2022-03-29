@@ -36,6 +36,7 @@
 	12. Remonté message d'alarme sur CGU sous le bouton correspondant
 	13. Corrections responsive
 	14. Correction saisie avec firefox
+	15. font-sizes ajustements
 	
 
 
