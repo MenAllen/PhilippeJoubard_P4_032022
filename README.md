@@ -35,6 +35,7 @@
 	11. Corrections messages d'erreur, placeholder mail, regex first & last, caractère apostrophe
 	12. Remonté message d'alarme sur CGU sous le bouton correspondant
 	13. Corrections responsive
+	14. Correction saisie avec firefox
 	
 
 

@@ -157,10 +157,14 @@ formulaire.addEventListener('submit', function (e) {
 
 });
 
-// Sur détection de changement d'input, on valide le champ
+// Pour les champs first, last et email, on détecte à la fois sur keyup et sur input aussi (à cause du cas sans saisie clavier sur firefox)
+// Pour les autres champs, sans saisie clavier, on détecte sur input seulement
 firstname.addEventListener("keyup", checkFirstname);
+firstname.addEventListener("input", checkFirstname);
 lastname.addEventListener("keyup", checkLastname);
+lastname.addEventListener("input", checkLastname);
 email.addEventListener("keyup", checkEmail);
+email.addEventListener("input", checkEmail);
 birthdate.addEventListener("input", checkBirthdate);
 quantity.addEventListener("input", checkQuantity);
 tournaments.addEventListener("input", checkTournaments);
