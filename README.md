@@ -37,6 +37,7 @@
 	13. Corrections responsive
 	14. Correction saisie avec firefox
 	15. font-sizes ajustements
+	16. Correction affichage sur grand ecran
 	
 
 

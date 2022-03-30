@@ -376,7 +376,7 @@ input[data-error]::after {
 	font-size: 16px;
 }
 .hero-section {
-	min-height: 93vh;
+/*	min-height: 93vh; */
 	border-radius: 10px;
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -493,6 +493,7 @@ footer {
 		color: #000;
 		padding: 20px;
     min-width:auto;
+	max-height: 800px;
 	}
 	.hero-content::after {
 		content: unset;
