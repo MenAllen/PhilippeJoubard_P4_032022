@@ -17,12 +17,11 @@
 					<img alt="logo" src="./img/Logo.png" />
 				</div>
 				<div class="main-navbar">
-					<a href="#" class="active"><span>Accueil</span></a>
-					<a href="#"><span>Détails de l'évènement</span></a>
+					<a href="#" class="active"><span>Détails de l'évènement</span></a>
 					<a href="#"><span>À propos</span></a>
-					<a href="#"><span>Évènements passés</span></a>
 					<a href="#"><span>Contact</span></a>
-					<a href="javascript:void(0);" class="icon" onclick="editNav()">
+					<a href="#"><span>Évènements passés</span></a>
+					<a href="javascript:void(0);" class="icon active" onclick="editNav()">
 						<i class="fa fa-bars"></i>
 					</a>
 				</div>
@@ -57,14 +56,19 @@
 					<!-- Formulaires permettant l'acquisition des variables -->
 					<div class="modal-body">
 						<form name="reserve" action="index.html" method="GET" novalidate>
+							<!-- Le prénom -->
 							<div class="formData" data-error="Veuillez entrer au moins 2 caractères" data-error-visible="false">
 								<label for="first">Prénom</label>
 								<input class="text-control" type="text" id="first" name="first" required />
 							</div>
+
+							<!-- Le nom -->
 							<div class="formData" data-error="Veuillez entrer au moins 2 caractères" data-error-visible="false">
 								<label for="last">Nom</label>
 								<input class="text-control" type="text" id="last" name="last" required />
 							</div>
+
+							<!-- L'adresse mail -->
 							<div class="formData" data-error="Veuillez respecter le format mail" data-error-visible="false">
 								<label for="email">E-mail</label>
 								<input
@@ -76,14 +80,20 @@
 									required
 								/>
 							</div>
+
+							<!-- La date de naissance -->
 							<div class="formData" data-error="Veuillez utiliser le format indiqué" data-error-visible="false">
 								<label for="birthdate">Date de naissance</label>
 								<input class="text-control" type="date" id="birthdate" name="birthdate" />
 							</div>
+
+							<!-- Le nombre de tournois déjà effectués -->
 							<div class="formData" data-error="Veuillez entrer un nombre entre 0 et 99" data-error-visible="false">
 								<label for="quantity">À combien de tournois GameOn avez-vous déjà participé ?</label>
 								<input type="number" class="text-control" id="quantity" name="quantity" min="0" max="99" required />
 							</div>
+
+							<!-- Le tournoi choisi -->
 							<p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
 							<div
 								class="formData"
@@ -123,6 +133,7 @@
 								>
 							</div>
 
+							<!-- Obligatoire: Accepter les condiftions d'utilisation -->
 							<div
 								class="formData"
 								data-error="Veuillez accepter les conditions d'utilisation"
@@ -134,6 +145,8 @@
 									J'ai lu et accepté les conditions d'utilisation.
 								</label>
 							</div>
+
+							<!-- Optionnel: être prévenu des prochains évènements -->
 							<div class="formdata">
 								<input class="checkbox-input" type="checkbox" id="checkbox2" />
 								<label class="checkbox2-label" for="checkbox2">
@@ -141,21 +154,22 @@
 									Je souhaite être prévenu des prochains évènements.
 								</label>
 							</div>
-							<br />
+							<br>
 							<input class="btn-submit" id="btn-submit" type="submit" value="C'est parti" />
 						</form>
 					</div>
 				</div>
 			</div>
 
-			<!-- Element modal s'affiche si inscription demandée -->
+			<!-- Element modal de confirmation s'affiche pour confirmer la soumission du formulaire -->
 			<div class="bground-confirm">
 				<div class="content">
-					<!-- Formulaires permettant l'acquisition des variables -->
-					<div class="modal-body">
-						<br />
+					<!-- Element modal se ferme si close demandé -->
+					<span class="close"></span>
+					<!-- Message de confirmation -->
+					<div class="modal-body-confirm">
+						<br>
 						<p class="text-center">Merci ! Votre inscription a bien été reçue</p>
-						<br />
 						<input class="btn-submit" type="button" value="Fermer" />
 					</div>
 				</div>

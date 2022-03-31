@@ -10,12 +10,10 @@ function editNav() {
 
 // DOM Elements utilisés pour les fonctions Javascript
 const modalBg = document.querySelector(".bground");
-const modalClose = document.querySelector(".close");
+const modalClose = document.querySelectorAll(".close");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const modalConfirm = document.querySelector(".bground-confirm");
 const modalConfirmClose = document.querySelector(".bground-confirm .btn-submit");
-// const formData = document.querySelectorAll(".formData");
-
 
 
 // Affiche le formulaire modal après avoir effacé les éventuels messages d'erreurs du formulaire
@@ -24,9 +22,10 @@ function launchModal() {
   modalBg.style.display = "block";
 }
 
-// Ferme le formulaire modal en réinitialisant les champs
+// Ferme le formulaire modal et le panneau de confirmation en réinitialisant les champs
 function closeModal() {
   modalBg.style.display = "none";
+  modalConfirm.style.display = "none";
   document.querySelector("form").reset();
 }
 
@@ -41,8 +40,9 @@ function closeModalConfirmation() {
   modalConfirm.style.display = "none";
 }
 
-// Manage modal events: launch & close
+// Gestion des évènements click sur le formulaire et le panneau de confirmation
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-modalClose.addEventListener("click", closeModal);
+modalClose[0].addEventListener("click", closeModal);
+modalClose[1].addEventListener("click", closeModal);
 modalConfirmClose.addEventListener("click", closeModalConfirmation);
 
